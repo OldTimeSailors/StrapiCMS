@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "landing_images",
+  "info": {
+    "singularName": "landing-image",
+    "pluralName": "landing-images",
+    "displayName": "landingImage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "photos": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true,
+      "required": true
+    }
+  }
+}

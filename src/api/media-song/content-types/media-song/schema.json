@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "media_songs",
+  "info": {
+    "singularName": "media-song",
+    "pluralName": "media-songs",
+    "displayName": "media-song"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "minLength": 1
+    },
+    "song": {
+      "allowedTypes": [
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

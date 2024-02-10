@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "media_videos",
+  "info": {
+    "singularName": "media-video",
+    "pluralName": "media-videos",
+    "displayName": "media-video"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "video": {
+      "allowedTypes": [
+        "videos"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "thumbnailStory": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "thumbnail": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}
