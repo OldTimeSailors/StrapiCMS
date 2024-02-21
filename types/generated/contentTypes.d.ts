@@ -781,6 +781,36 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiClientsImageClientsImage extends Schema.SingleType {
+  collectionName: 'clients_images';
+  info: {
+    singularName: 'clients-image';
+    pluralName: 'clients-images';
+    displayName: 'ClientsImage';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Image: Attribute.Media & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::clients-image.clients-image',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::clients-image.clients-image',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiLandingImageLandingImage extends Schema.SingleType {
   collectionName: 'landing_images';
   info: {
@@ -1024,6 +1054,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::clients-image.clients-image': ApiClientsImageClientsImage;
       'api::landing-image.landing-image': ApiLandingImageLandingImage;
       'api::marker.marker': ApiMarkerMarker;
       'api::media-photo.media-photo': ApiMediaPhotoMediaPhoto;

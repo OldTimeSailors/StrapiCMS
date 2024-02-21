@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "clients_images",
+  "info": {
+    "singularName": "clients-image",
+    "pluralName": "clients-images",
+    "displayName": "ClientsImage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}
