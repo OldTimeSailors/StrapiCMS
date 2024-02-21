@@ -4,19 +4,29 @@
   "info": {
     "singularName": "clients-image",
     "pluralName": "clients-images",
-    "displayName": "ClientsImage"
+    "displayName": "ClientsImage",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "Image": {
+    "Desktop": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "Mobile": {
       "allowedTypes": [
         "images"
       ],
       "type": "media",
-      "multiple": false
+      "multiple": false,
+      "required": true
     }
   }
 }
