@@ -792,7 +792,7 @@ export interface ApiClientsImageClientsImage extends Schema.SingleType {
     draftAndPublish: true;
   };
   attributes: {
-    Image: Attribute.Media & Attribute.Required;
+    Image: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
