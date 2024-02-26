@@ -13,10 +13,11 @@ module.exports = ({ env }) => ({
           delete: {},
         },
         breakpoints: {
-          xl: 4000,
+          xl: 2000,
           large: 1000,
           medium: 750,
-          small: 500
+          small: 500,
+          placeholder: 10,
           
         }
       },
