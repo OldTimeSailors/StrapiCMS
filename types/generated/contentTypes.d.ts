@@ -787,14 +787,13 @@ export interface ApiClientsImageClientsImage extends Schema.SingleType {
     singularName: 'clients-image';
     pluralName: 'clients-images';
     displayName: 'ClientsImage';
-    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    Desktop: Attribute.Media;
-    Mobile: Attribute.Media & Attribute.Required;
+    desktop: Attribute.Media & Attribute.Required;
+    mobile: Attribute.Media & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

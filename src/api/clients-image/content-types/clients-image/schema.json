@@ -4,23 +4,22 @@
   "info": {
     "singularName": "clients-image",
     "pluralName": "clients-images",
-    "displayName": "ClientsImage",
-    "description": ""
+    "displayName": "ClientsImage"
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "Desktop": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
+    "desktop": {
       "allowedTypes": [
         "images"
-      ]
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
     },
-    "Mobile": {
+    "mobile": {
       "allowedTypes": [
         "images"
       ],
