@@ -25,7 +25,7 @@ module.exports = ({ env }) => ({
     'import-export-entries': {
       enabled: true,
       cconfig: {
-        serverPublicHostname: 'http://localhost:1337', // REEMPLAZAR CON URL DEL SITIO CUANDO SE SUBA
+        serverPublicHostname: 'https://strapi-cms-ohfe.onrender.com',
       },
     },
   });
