@@ -968,15 +968,13 @@ export interface ApiMediaVideoMediaVideo extends Schema.CollectionType {
     singularName: 'media-video';
     pluralName: 'media-videos';
     displayName: 'media-video';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     video: Attribute.Media & Attribute.Required;
-    thumbnailStory: Attribute.Boolean &
-      Attribute.Required &
-      Attribute.DefaultTo<true>;
     thumbnail: Attribute.Media & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -1014,11 +1012,7 @@ export interface ApiServiceService extends Schema.CollectionType {
         minLength: 1;
       }>;
     images: Attribute.Media & Attribute.Required;
-    paragraph: Attribute.Text &
-      Attribute.Required &
-      Attribute.SetMinMaxLength<{
-        minLength: 1;
-      }>;
+    paragraph: Attribute.RichText & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

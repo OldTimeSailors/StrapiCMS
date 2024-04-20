@@ -4,7 +4,8 @@
   "info": {
     "singularName": "media-video",
     "pluralName": "media-videos",
-    "displayName": "media-video"
+    "displayName": "media-video",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -12,25 +13,20 @@
   "pluginOptions": {},
   "attributes": {
     "video": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
       "allowedTypes": [
         "videos"
-      ],
-      "type": "media",
-      "multiple": false,
-      "required": true
-    },
-    "thumbnailStory": {
-      "type": "boolean",
-      "default": true,
-      "required": true
+      ]
     },
     "thumbnail": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     }
   }
 }

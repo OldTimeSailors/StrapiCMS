@@ -26,9 +26,8 @@
       ]
     },
     "paragraph": {
-      "type": "text",
-      "required": true,
-      "minLength": 1
+      "type": "richtext",
+      "required": true
     }
   }
 }
