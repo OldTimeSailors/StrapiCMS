@@ -862,7 +862,6 @@ export interface ApiMarkerMarker extends Schema.CollectionType {
     markerPosition: Attribute.JSON & Attribute.Required;
     event: Attribute.String &
       Attribute.Required &
-      Attribute.Unique &
       Attribute.SetMinMaxLength<{
         minLength: 1;
       }>;

@@ -24,7 +24,7 @@
       "type": "string",
       "required": true,
       "minLength": 1,
-      "unique": true
+      "unique": false
     },
     "location": {
       "type": "string",
