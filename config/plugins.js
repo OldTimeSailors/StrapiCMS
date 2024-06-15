@@ -1,31 +1,28 @@
 module.exports = ({ env }) => ({
     upload: {
       config: {
-        provider: 'cloudinary',
+        provider: 'aws-s3',
         providerOptions: {
-          cloud_name: env('CLOUDINARY_NAME'),
-          api_key: env('CLOUDINARY_KEY'),
-          api_secret: env('CLOUDINARY_SECRET'),
+          accessKeyId: env('AWS_ACCESS_KEY_ID'),
+          secretAccessKey: env('AWS_ACCESS_SECRET'),
+          region: env('AWS_REGION'),
+          params: {
+            Bucket: env('AWS_BUCKET'),
+          },
+          baseUrl: `https://${env('AWS_BUCKET')}.s3.${env('AWS_REGION')}.amazonaws.com`, // Base URL configuration
         },
         actionOptions: {
           upload: {},
           uploadStream: {},
           delete: {},
         },
-        breakpoints: {
-          xl: 2000,
-          large: 1000,
-          medium: 750,
-          small: 500,
-          placeholder: 10,
-          
-        }
       },
     },
     'import-export-entries': {
       enabled: true,
-      cconfig: {
+      config: {
         serverPublicHostname: 'https://strapi-cms-ohfe.onrender.com',
       },
-    },
-  });
+    }
+
+});

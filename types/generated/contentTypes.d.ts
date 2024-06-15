@@ -512,6 +512,12 @@ export interface PluginContentReleasesRelease extends Schema.CollectionType {
   attributes: {
     name: Attribute.String & Attribute.Required;
     releasedAt: Attribute.DateTime;
+    scheduledAt: Attribute.DateTime;
+    timezone: Attribute.String;
+    status: Attribute.Enumeration<
+      ['ready', 'blocked', 'failed', 'done', 'empty']
+    > &
+      Attribute.Required;
     actions: Attribute.Relation<
       'plugin::content-releases.release',
       'oneToMany',
@@ -566,6 +572,7 @@ export interface PluginContentReleasesReleaseAction
       'manyToOne',
       'plugin::content-releases.release'
     >;
+    isEntryValid: Attribute.Boolean;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -792,8 +799,8 @@ export interface ApiClientsImageClientsImage extends Schema.SingleType {
     draftAndPublish: true;
   };
   attributes: {
-    desktop: Attribute.Media & Attribute.Required;
-    mobile: Attribute.Media & Attribute.Required;
+    desktop: Attribute.Media<'images'> & Attribute.Required;
+    mobile: Attribute.Media<'images'> & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -823,7 +830,7 @@ export interface ApiLandingImageLandingImage extends Schema.SingleType {
     draftAndPublish: true;
   };
   attributes: {
-    photos: Attribute.Media & Attribute.Required;
+    photos: Attribute.Media<'images', true> & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -907,7 +914,7 @@ export interface ApiMediaPhotoMediaPhoto extends Schema.SingleType {
     draftAndPublish: true;
   };
   attributes: {
-    photos: Attribute.Media;
+    photos: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -942,7 +949,7 @@ export interface ApiMediaSongMediaSong extends Schema.CollectionType {
       Attribute.SetMinMaxLength<{
         minLength: 1;
       }>;
-    song: Attribute.Media & Attribute.Required;
+    song: Attribute.Media<'audios'> & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -973,8 +980,8 @@ export interface ApiMediaVideoMediaVideo extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    video: Attribute.Media & Attribute.Required;
-    thumbnail: Attribute.Media & Attribute.Required;
+    video: Attribute.Media<'videos'> & Attribute.Required;
+    thumbnail: Attribute.Media<'images'> & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1010,7 +1017,7 @@ export interface ApiServiceService extends Schema.CollectionType {
       Attribute.SetMinMaxLength<{
         minLength: 1;
       }>;
-    images: Attribute.Media & Attribute.Required;
+    images: Attribute.Media<'images', true> & Attribute.Required;
     paragraph: Attribute.RichText & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
