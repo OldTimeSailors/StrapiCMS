@@ -50,10 +50,10 @@
       "required": true,
       "minLength": 1
     },
-      "gigFinishTime":{
+    "gigFinishTime":{
       "type": "string",
       "required": true,
       "minLength": 1
-    }    
+    },    
   }
 }
