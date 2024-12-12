@@ -40,6 +40,20 @@
     "ticketsURL": {
       "type": "string",
       "minLength": 1
-    }
+    },
+    "venueInfo":{
+      "type": "string",
+      "unique": false,
+    },
+    "gigStartTime":{
+      "type": "string",
+      "required": true,
+      "minLength": 1
+    },
+      "gigFinishTime":{
+      "type": "string",
+      "required": true,
+      "minLength": 1
+    }    
   }
 }
