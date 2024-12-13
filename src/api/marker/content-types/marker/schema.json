@@ -41,16 +41,16 @@
       "type": "string",
       "minLength": 1
     },    
-    "venueInfo":{
+    "venueInfo": {
       "type": "string",
-      "unique": false,
+      "unique": false
     },
-    "gigStartTime":{
+    "gigStartTime": {
       "type": "string",
       "required": true,
       "minLength": 1
     },
-    "gigFinishTime":{
+    "gigFinishTime": {
       "type": "string",
       "required": true,
       "minLength": 1
