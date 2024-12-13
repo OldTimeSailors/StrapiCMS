@@ -40,6 +40,6 @@
     "ticketsURL": {
       "type": "string",
       "minLength": 1
-    },
+    }
   }
 }
