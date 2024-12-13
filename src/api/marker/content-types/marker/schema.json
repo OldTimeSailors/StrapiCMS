@@ -54,6 +54,12 @@
       "type": "string",
       "required": true,
       "minLength": 1
-    }    
+    },
+    "typeOfShow": {
+      "type": "enumeration",
+      "required": true,
+      "enum": ["Family","Power"],
+      "default": "Family"
+    }
   }
 }
